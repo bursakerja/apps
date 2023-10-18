@@ -2,7 +2,6 @@ function signIn() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  // Make a POST request to the sign-in endpoint
   fetch(
     "https://asia-southeast2-bursakerja-project.cloudfunctions.net/bursakerja-post",
     {
@@ -28,8 +27,15 @@ function signIn() {
           data.token
         }; expires=${now.toUTCString()}; path=/`;
 
-        // Redirect to homePelamar.html
-        window.location.href = "homePelamar.html";
+        // Display success message using SweetAlert
+        Swal.fire({
+          icon: "success",
+          title: "Sign In Successful",
+          text: data.message,
+        }).then(() => {
+          // Redirect to homePelamar.html
+          window.location.href = "homePelamar.html";
+        });
       } else {
         // Display signin error message using SweetAlert
         Swal.fire({
@@ -45,7 +51,7 @@ function signIn() {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: data.message,
+        text: "An error occurred while signing in. Please try again later.",
       });
     });
 }
