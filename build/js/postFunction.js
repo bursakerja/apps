@@ -17,6 +17,7 @@ export default function PostSignUp() {
 }
 
 function responseData(result) {
+  alert("data masukkk");
   setInner("pesan", result.message);
   setCookieWithExpireHour("token", result.token, 2);
 }
