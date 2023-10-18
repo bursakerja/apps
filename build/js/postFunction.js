@@ -19,14 +19,24 @@ export default function PostSignUp() {
 }
 
 function responseData(result) {
-  alert("testing3");
   if (result.token) {
     // Jika memiliki token, simpan token di cookie
     setCookieWithExpireHour("token", result.token, 2);
-    // Redirect to homePelamar.html
-    window.location.href = "homePelamar.html";
+    // Tampilkan SweetAlert berhasil login
+    Swal.fire({
+      icon: "success",
+      title: "Login Successful",
+      text: "You have successfully logged in.",
+    }).then(() => {
+      // Redirect to homePelamar.html
+      window.location.href = "homePelamar.html";
+    });
   } else {
-    // Jika tidak memiliki token, tampilkan pesan kesalahan
-    alert("Login failed.");
+    // Jika tidak memiliki token, tampilkan SweetAlert pesan kesalahan
+    Swal.fire({
+      icon: "error",
+      title: "Login Failed",
+      text: result.message,
+    });
   }
 }
