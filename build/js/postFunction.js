@@ -22,11 +22,12 @@ function responseData(result) {
   alert("testing3");
   if (result.token) {
     // Jika memiliki token, simpan token di cookie
+    setInner("pesan", result.message);
     setCookieWithExpireHour("token", result.token, 2);
     // Redirect to homePelamar.html
     window.location.href = "homePelamar.html";
   } else {
     // Jika tidak memiliki token, tampilkan pesan kesalahan
-    setInner("pesan", result.message || "Login failed.");
+    alert("Login failed.");
   }
 }
