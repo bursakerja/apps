@@ -29,7 +29,7 @@ function signIn() {
         }; expires=${now.toUTCString()}; path=/`;
 
         // Redirect to homePelamar.html
-        window.location.href = "pelamar/homePelamar.html";
+        window.location.href = "homePelamar.html";
       } else {
         // Display signin error message using SweetAlert
         Swal.fire({
