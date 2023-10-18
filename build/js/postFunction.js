@@ -1,18 +1,6 @@
 import { postWithToken } from "https://jscroot.github.io/api/croot.js";
 import { setInner, getValue } from "https://jscroot.github.io/element/croot.js";
-
-function setCookieWithExpireHour(cname, cvalue, exhour) {
-  const d = new Date();
-  d.setTime(d.getTime() + exhour * 60 * 60 * 1000);
-  let expires = "expires=" + d.toUTCString();
-  document.cookie =
-    cname +
-    "=" +
-    cvalue +
-    ";" +
-    expires +
-    "Secure;HttpOnly;SameSite=Strict;path=/pelamar";
-}
+import { setCookieWithExpireHour } from "https://jscroot.github.io/cookie/croot.js";
 
 export default function PostSignUp() {
   let target_url =
@@ -25,7 +13,6 @@ export default function PostSignUp() {
     password: getValue("password"),
   };
 
-  // Panggil fungsi postWithToken
   postWithToken(target_url, tokenkey, tokenvalue, datainjson, responseData);
   //   alert("testing2");
 }
