@@ -19,9 +19,12 @@ export default function PostSignUp() {
 }
 
 function responseData(result) {
+  console.log(result.message);
   if (result.token) {
     // Jika memiliki token, simpan token di cookie
     setCookieWithExpireHour("token", result.token, 2);
+    // Simpan pesan hasil respons di local storage
+    localStorage.setItem("message", result.message);
     // Tampilkan SweetAlert berhasil login
     Swal.fire({
       icon: "success",
@@ -36,7 +39,7 @@ function responseData(result) {
     Swal.fire({
       icon: "error",
       title: "Login Failed",
-      text: result.message,
+      text: message,
     });
   }
 }
