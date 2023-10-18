@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-down {
+  animation: fadeDown 2s ease-in-out;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 2s ease-in-out;
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-right {
+  animation: fadeRight 1s ease-in-out;
+}
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(-100%); /* Mulai dari luar layar sebelah kiri */
+  }
+  100% {
+    transform: translateX(100%); /* Berakhir di luar layar sebelah kanan */
+  }
+}
+
+.animate-left-to-right {
+  animation: moveLeftRight 20s linear infinite;
+}
+
+@keyframes moveRightToLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-right-to-left {
+  animation: moveRightToLeft 20s linear infinite;
+}
+
+/* scroll */
+.fade-in-element {
+  opacity: 0;
+  transition: opacity 2s ease; /* Animasi fade dengan durasi 1 detik */
+}
+
+.fade-in-element.visible {
+  opacity: 1;
+}
