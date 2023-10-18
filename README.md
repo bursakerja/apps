@@ -1,3 +1,3 @@
 # fe_bursakerja
 
-https://bursakerja.github.io/fe_bursakerja/build
+ https://bursakerja.github.io/apps/build
