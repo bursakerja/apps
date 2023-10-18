@@ -3,7 +3,6 @@ import { setInner, getValue } from "https://jscroot.github.io/element/croot.js";
 import { setCookieWithExpireHour } from "https://jscroot.github.io/cookie/croot.js";
 
 export default function PostSignUp() {
-  alert("testing");
   let target_url =
     "https://asia-southeast2-bursakerja-project.cloudfunctions.net/bursakerja-post";
   let tokenkey = "token";
@@ -19,7 +18,6 @@ export default function PostSignUp() {
 }
 
 function responseData(result) {
-  console.log(result.message);
   if (result.token) {
     // Jika memiliki token, simpan token di cookie
     setCookieWithExpireHour("token", result.token, 2);
@@ -39,7 +37,7 @@ function responseData(result) {
     Swal.fire({
       icon: "error",
       title: "Login Failed",
-      text: message,
+      text: result.message,
     });
   }
 }
