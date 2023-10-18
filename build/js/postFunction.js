@@ -22,6 +22,4 @@ function responseData(result) {
   console.log("test:", result.message);
   setInner("pesan", result.message);
   setCookieWithExpireHour("token", result.token, 2);
-  // Redirect to homePelamar.html
-  window.location.href = "homePelamar.html";
 }
