@@ -27,7 +27,7 @@ function setCookieWithExpireHour(cname, cvalue, exhour) {
     cvalue +
     ";" +
     expires +
-    "Secure;HttpOnly;SameSite=Strict;path=/";
+    "Secure;HttpOnly;SameSite=Strict;path=/pelamar";
 }
 
 function responseData(result) {
