@@ -42,6 +42,9 @@ function signIn() {
           icon: "error",
           title: "Sign In Failed",
           text: data.message,
+        }).then(() => {
+          // Redirect back to signIn.html on failure
+          window.location.href = "signIn.html";
         });
       }
     })
@@ -52,6 +55,9 @@ function signIn() {
         icon: "error",
         title: "Error",
         text: "An error occurred while signing in. Please try again later.",
+      }).then(() => {
+        // Redirect back to signIn.html on error
+        window.location.href = "signIn.html";
       });
     });
 }
