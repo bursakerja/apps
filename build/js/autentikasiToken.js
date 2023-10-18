@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Periksa apakah ada token dalam cookie
   const token = getCookie("token");
 
   // Jika tidak ada token, redirect ke halaman signIn.html
