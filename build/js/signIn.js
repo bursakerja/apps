@@ -1,3 +1,5 @@
+document.getElementById("signInBtn").addEventListener("click", signIn);
+
 function signIn() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -20,8 +22,13 @@ function signIn() {
     .then((data) => {
       if (data.status === 200) {
         // Signin success
-        // // Save the token in local storage
-        localStorage.setItem("token", data.token);
+        // Save the token in cookies with an expiry time (in seconds)
+        const expiryTime = 3600; // 1 hour (in seconds)
+        const now = new Date();
+        now.setTime(now.getTime() + expiryTime * 1000);
+        document.cookie = `token=${
+          data.token
+        }; expires=${now.toUTCString()}; path=/`;
 
         // Redirect to homePelamar.html
         window.location.href = "pelamar/homePelamar.html";
@@ -40,7 +47,7 @@ function signIn() {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "An error occurred while signing in. Please try again later.",
+        text: data.message,
       });
     });
 }
