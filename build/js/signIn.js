@@ -27,6 +27,8 @@ function signIn() {
           data.token
         }; expires=${now.toUTCString()}; path=/`;
 
+        console.log(data);
+
         // Display success message using SweetAlert
         Swal.fire({
           icon: "success",
@@ -61,3 +63,5 @@ function signIn() {
       });
     });
 }
+
+console.log(data);
