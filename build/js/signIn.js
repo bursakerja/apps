@@ -20,12 +20,13 @@ function signIn() {
       if (data.status === 200) {
         // Signin success
         // Save the token in cookies with an expiry time (in seconds)
-        const expiryTime = 3600; // 1 hour (in seconds)
-        const now = new Date();
-        now.setTime(now.getTime() + expiryTime * 1000);
-        document.cookie = `token=${
-          data.token
-        }; expires=${now.toUTCString()}; path=/`;
+        // const expiryTime = 3600; // 1 hour (in seconds)
+        // const now = new Date();
+        // now.setTime(now.getTime() + expiryTime * 1000);
+        // document.cookie = `token=${
+        //   data.token
+        // }; expires=${now.toUTCString()}; path=/`;
+        localStorage.setItem("token", data.token);
 
         console.log(data);
 
