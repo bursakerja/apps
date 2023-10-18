@@ -15,7 +15,7 @@ export default function PostSignUp() {
   };
 
   postWithToken(target_url, tokenkey, tokenvalue, datainjson, responseData);
-  alert("testing2");
+  //   alert("testing2");
 }
 
 function responseData(result) {
