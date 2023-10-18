@@ -9,7 +9,7 @@ export default function PostSignUp() {
   let tokenvalue =
     "3108501ddf2f9aa33f3a7c0e387339b131d8a4d22818feb511b0fe1bc3a16b36";
   let datainjson = {
-    username: getValue("username"),
+    email: getValue("email"),
     password: getValue("password"),
   };
 
