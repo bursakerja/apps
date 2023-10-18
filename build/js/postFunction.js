@@ -19,7 +19,14 @@ export default function PostSignUp() {
 }
 
 function responseData(result) {
-  setInner("pesan", result.message);
-  setCookieWithExpireHour("token", result.token, 2);
-  alert("test3");
+  alert("testing3");
+  if (result.token) {
+    // Jika memiliki token, simpan token di cookie
+    setCookieWithExpireHour("token", result.token, 2);
+    // Redirect to homePelamar.html
+    window.location.href = "homePelamar.html";
+  } else {
+    // Jika tidak memiliki token, tampilkan pesan kesalahan
+    setInner("pesan", result.message || "Login failed.");
+  }
 }
