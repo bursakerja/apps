@@ -3,9 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./node_modules/preline/dist/preline.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/build/style/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <h1>TAIIIIII</h1>
+    <div
+      class="max-w-[50rem] flex flex-col mx-auto w-full h-screen animate-fade"
+      style="
+        background-image: url('https://preline.co/assets/svg/component/squared-bg-element.svg');
+      "
+    >
+      <header class="mb-auto flex justify-center z-50 w-full py-4">
+        <nav class="px-4 sm:px-6 lg:px-8" aria-label="Global">
+          <a
+            class="flex-none text-xl font-semibold sm:text-3xl"
+            href="#"
+            aria-label="Brand"
+            >Bursa Kerja</a
+          >
+        </nav>
+      </header>
+
+      <div class="text-center py-10 px-4 sm:px-6 lg:px-8">
+        <h1 class="block text-7xl font-bold text-gray-800 sm:text-9xl">
+          4<span
+            class="bg-gradient-to-tl from-blue-600 to-violet-600 bg-clip-text text-transparent"
+            >0</span
+          >4
+        </h1>
+        <h1 class="block text-2xl font-bold text-white"></h1>
+        <p class="mt-3 text-gray-600">Oops, something went wrong.</p>
+        <p class="text-gray-600">Sorry, we couldn't find your page.</p>
+        <div
+          class="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3"
+        >
+          <a
+            class="w-full sm:w-auto inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:bg-blue-700 border border-transparent text-white text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4"
+            href="https://github.com/htmlstreamofficial/preline/tree/main/examples/html"
+            target="_blank"
+          >
+            <svg
+              class="w-2.5 h-2.5"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M11.2792 1.64001L5.63273 7.28646C5.43747 7.48172 5.43747 7.79831 5.63273 7.99357L11.2792 13.64"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            Back to your page
+          </a>
+        </div>
+      </div>
+
+      <footer class="mt-auto text-center py-5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p class="text-sm text-gray-500">© All Rights Reserved. 2022.</p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
