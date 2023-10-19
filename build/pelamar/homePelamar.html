@@ -8,6 +8,7 @@
     <script src="../../node_modules/preline/dist/preline.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./style/stylePelamar.css" />
+    <script type="module" src="../js/logout.js"></script>
     <!-- <script src="../js/autentikasiSignIn.js"></script> -->
   </head>
   <body>
@@ -83,6 +84,12 @@
               >Contact</a
             >
           </div>
+          <a
+            onclick="logout()"
+            class="font-medium text-gray-500 hover:text-gray-400 sm:py-6"
+            href="index.html"
+            >Logout</a
+          >
         </div>
       </nav>
     </header>
@@ -737,6 +744,6 @@
       });
     </script> -->
     <!-- <script type="module" src="./js/autentikasiToken.js"></script> -->
-    <script type="module" src="../js/getCookie.js"></script>
+    <script src="../js/getCookie.js"></script>
   </body>
 </html>
