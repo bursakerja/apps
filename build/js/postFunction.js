@@ -1,6 +1,6 @@
 import { postWithToken } from "https://jscroot.github.io/api/croot.js";
 import { setInner, getValue } from "https://jscroot.github.io/element/croot.js";
-// import { setCookieWithExpireHour } from "https://jscroot.github.io/cookie/croot.js";
+import { setCookieWithExpireHour } from "https://jscroot.github.io/cookie/croot.js";
 
 export default function PostSignUp() {
   let target_url =
@@ -17,19 +17,6 @@ export default function PostSignUp() {
   //   alert("testing2");
 }
 
-function setCookieWithExpireHour(cname, cvalue, exhour) {
-  const d = new Date();
-  d.setTime(d.getTime() + exhour * 60 * 60 * 1000);
-  let expires = "expires=" + d.toUTCString();
-  document.cookie =
-    cname +
-    "=" +
-    cvalue +
-    ";" +
-    expires +
-    "Secure;HttpOnly;SameSite=Strict;path=/pelamar";
-}
-
 function responseData(result) {
   if (result.token) {
     // Jika memiliki token, simpan token di cookie
@@ -39,8 +26,6 @@ function responseData(result) {
       "=" +
       result.message +
       "; Expires=Thu, 26 Oct 2023 07:28:00 GMT";
-    // Simpan pesan hasil respons di local storage
-    localStorage.setItem("message", result.message);
     // Tampilkan SweetAlert berhasil login
     Swal.fire({
       icon: "success",
