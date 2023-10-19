@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-    <title>Document</title>
+    <title>Bursa Kerja</title>
     <script src="../../node_modules/preline/dist/preline.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./style/stylePelamar.css" />
@@ -84,7 +84,7 @@
             <button
               type="submit"
               onclick="logout()"
-              class="font-medium text-gray-500 hover:text-gray-400 sm:py-6"
+              class="flex items-center gap-x-2 font-medium text-gray-500 sm:border-l sm:border-gray-300 sm:my-6 sm:pl-6"
             >
               Logout
             </button>
@@ -334,7 +334,6 @@
         <h2 class="text-2xl font-bold md:text-3xl md:leading-tight">
           Rekomendasi job relevan untukmu
         </h2>
-        <h1 id="cookie"></h1>
       </div>
       <!-- End Title -->
 
@@ -348,7 +347,7 @@
           <div class="flex items-center gap-x-4">
             <img
               class="rounded-full w-20 h-20"
-              src="/images/shopee_logo.jpg"
+              src="../../images/shopee_logo.jpg"
               alt="Image Description"
             />
             <div class="grow">
@@ -733,18 +732,10 @@
 
     <!-- End Footer -->
 
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Ambil pesan hasil respons dari local storage
-        const message = localStorage.getItem("message");
-
-        // Tampilkan pesan dalam elemen dengan ID "pesan"
-        const pesanElement = document.getElementById("pesan");
-        pesanElement.innerText = message;
-      });
-    </script> -->
     <!-- <script type="module" src="./js/autentikasiToken.js"></script> -->
-    <script src="../js/getCookie.js"></script>
     <script src="../js/logout.js"></script>
+    <script>
+      localStorage.setItem("previousPageURL", window.location.href);
+    </script>
   </body>
 </html>

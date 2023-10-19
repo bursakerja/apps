@@ -9,6 +9,7 @@ function logout() {
     cancelButtonText: "Batal",
   }).then((result) => {
     if (result.isConfirmed) {
+      localStorage.removeItem("previousPageURL");
       // Menghapus toke dari cookie
       document.cookie =
         "token= ; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
