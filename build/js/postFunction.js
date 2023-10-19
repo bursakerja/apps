@@ -21,11 +21,6 @@ function responseData(result) {
   if (result.token) {
     // Jika memiliki token, simpan token di cookie
     setCookieWithExpireHour("token", result.token, 2);
-    document.cookie =
-      "message" +
-      "=" +
-      result.message +
-      "; Expires=Thu, 26 Oct 2023 07:28:00 GMT";
     // Tampilkan SweetAlert berhasil login
     Swal.fire({
       icon: "success",

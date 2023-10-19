@@ -12,8 +12,6 @@ function logout() {
       // Menghapus toke dari cookie
       document.cookie =
         "token= ; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      document.cookie =
-        "message= ; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       // Redirect ke halaman sign-in.html
       window.location.href = "../signIn.html";
     }
