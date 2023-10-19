@@ -1,6 +1,3 @@
-import { deleteCookie } from "https://jscroot.github.io/cookie/croot.js";
-
-// Fungsi untuk logout
 function logout() {
   // Menampilkan Sweet Alert konfirmasi
   Swal.fire({
@@ -15,11 +12,10 @@ function logout() {
       // Menghapus message dari local storage
       localStorage.removeItem("message"); // Jika menggunakan local storage
       // Menghapus toke dari cookie
-      deleteCookie("token");
+      document.cookie =
+        "token= ; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       // Redirect ke halaman sign-in.html
       window.location.href = "../signIn.html";
     }
   });
 }
-
-logout();
